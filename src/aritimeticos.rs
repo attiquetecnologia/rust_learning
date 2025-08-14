@@ -66,13 +66,13 @@ fn main(){
 
     println!("\nfor: ordenação por bolha ---");
     let mut elemento = [40, 1, 90 ,18, 66, 5, 9, 10, 98, 11];
-    for x in 0..10{
-        for y in (0..10).rev(){
+    let n = elemento.len();
+    println!("Número de elementos {}", n);
+    for x in 0..n {
+        for y in 0..n - 1 - x {
             println!("x:{x}, y:{y}");
-            if elemento[y-1] > elemento[x] {
-                let mut valor = elemento[y-1];
-                elemento[y-1] = elemento[x];
-                elemento[y] = valor;
+            if elemento[y] > elemento[y+1] {
+                elemento.swap(y, y+1);
             }
         }
     }
